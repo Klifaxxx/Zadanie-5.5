@@ -1,0 +1,47 @@
+﻿using System;
+using System.Threading.Channels;
+using System.Text;
+using System.Collections.Generic;
+
+namespace NowaApp1
+{
+    internal class Program
+    {
+        static void Rysuj(int dlugosc, int szerokosc, char znak)
+        {
+            for (int x = 0; x < dlugosc; x++)
+            {
+                for (int y = 0; y < szerokosc; y++)
+                {
+                    Console.Write(znak);
+                }
+                Console.WriteLine();
+            }
+
+        }
+
+        static void Main(string[] args)
+        {
+
+            Console.WriteLine("podaj długość: ");
+            int dlugosc = int.Parse(Console.ReadLine());
+            Console.WriteLine("podaj szerokość: ");
+            int szerokosc = int.Parse(Console.ReadLine());
+            Console.WriteLine("podaj znak: ");
+            char znak = char.Parse(Console.ReadLine());
+
+            Console.WriteLine();
+
+            Rysuj(dlugosc, szerokosc, znak);
+
+            Console.WriteLine();
+
+            Rysuj(szerokosc, dlugosc, znak);
+
+            Console.ReadKey();
+
+        }
+
+
+    }
+}
